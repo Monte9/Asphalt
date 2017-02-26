@@ -61,7 +61,7 @@ export default class TabThreeScreenOne extends Component {
     var _this = this;
 
     return (
-      <View style={{ flex:1 }}>
+      <ScrollView>
         <View style={styles.headingContainer}>
           {this.renderImage()}
           {this.displayUserDetails()}
@@ -90,7 +90,7 @@ export default class TabThreeScreenOne extends Component {
               icon={{name: ''}} />
           </List>
         </View>
-      </View>
+      </ScrollView>
     )
   }
 }

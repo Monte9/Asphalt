@@ -9,9 +9,9 @@ const routeConfiguration = {
 }
 
 const tabBarConfiguration = {
-tabBarOptions:{
+  tabBarOptions:{
     // tint color is passed to text and icons (if enabled) on the tab bar
-    activeTintColor: '#448FF2',
+    activeTintColor: '#A64D3B',
     inactiveTintColor: '#474E5C',
   }
 }
