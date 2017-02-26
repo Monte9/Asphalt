@@ -41,7 +41,7 @@ export default class TabOneScreenOne extends Component {
     Keyboard.dismiss();
 
     if (!this.state.buttonDisabled) {
-      this.props.navigation.navigate('TabOneScreenTwo')
+      this.props.navigation.navigate('Channels')
       // this._onPressDisconnect();
       return;
     }
