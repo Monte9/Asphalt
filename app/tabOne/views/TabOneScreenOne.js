@@ -1,26 +1,27 @@
-'use strict'
-import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
-export default class TabOneScreenOne extends React.Component {
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+
+import { Button } from 'react-native-elements'
+
+export default class TabOneScreenOne extends Component {
+  static navigationOptions = {
+    title: 'Message',
+  }
+
   render(){
     return(
       <View style={{
         flex:1,
-        backgroundColor:'red',
         alignItems:'center',
+        backgroundColor: '#1C7CF3',
         justifyContent:'center'
       }}>
-        <Text>{ 'Tab One Screen One' }</Text>
-        <TouchableOpacity
-          onPress={ () => this.props.navigation.navigate('TabOneScreenTwo') }
-          style={{
-            padding:20,
-            borderRadius:20,
-            backgroundColor:'yellow',
-            marginTop:20
-          }}>
-          <Text>{'Go to next screen this tab'}</Text>
-        </TouchableOpacity>
+      <Button
+        iconRight
+        buttonStyle={{ borderRadius:30, backgroundColor: '#1BA1F7' }}
+        icon={{ name: 'comments-o', type: 'font-awesome', size: 30 }}
+        title='EXPLORE MESSAGES'
+        onPress={ () => this.props.navigation.navigate('TabOneScreenTwo') } />
       </View>
     )
   }

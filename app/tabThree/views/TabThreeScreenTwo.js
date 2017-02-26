@@ -1,7 +1,18 @@
-'use strict'
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+
+import BackButton from '../../shared/back_button'
+
 export default class TabThreeScreenTwo extends React.Component {
+  static navigationOptions = {
+    title: 'Profile Screen 2',
+    header: ({ goBack }) => {
+      return {
+        left: <BackButton goBack={goBack} />
+      }
+    }
+  }
+
   render(){
     return(
       <View style={{
