@@ -72,7 +72,7 @@ export default class TabThreeScreenOne extends Component {
             sample_settings.map((item, index) => (
               <ListItem
                 key={index}
-                onPress={ () => this.props.navigation.navigate('TabThreeScreenTwo') }
+                onPress={ () => this.props.navigation.navigate('TabThreeScreenTwo', { title: item.title }) }
                 title={item.title}
                 icon={{name: item.icon}} />
             ))
@@ -82,7 +82,9 @@ export default class TabThreeScreenOne extends Component {
             <ListItem
               key={1}
               hideChevron={true}
-              onPress={() => console.log("LOG OUT")}
+              onPress={
+                () => this.props.navigation.dispatch({ type:'JUMP_TO_TAB', payload:{index:0} })
+              }
               title='LOGOUT'
               titleStyle={styles.logoutText}
               icon={{name: ''}} />

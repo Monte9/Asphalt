@@ -5,7 +5,7 @@ import BackButton from '../../shared/back_button'
 
 export default class TabThreeScreenTwo extends React.Component {
   static navigationOptions = {
-    title: 'Profile Screen 2',
+    title: ({ state }) => state.params.title,
     header: ({ goBack }) => {
       return {
         left: <BackButton goBack={goBack} />
@@ -17,33 +17,9 @@ export default class TabThreeScreenTwo extends React.Component {
     return(
       <View style={{
         flex:1,
-        backgroundColor:'blue',
         alignItems:'center',
         justifyContent:'center'
       }}>
-        <Text>{ 'Tab Three Screen Two' }</Text>
-        <TouchableOpacity
-          onPress={ () => this.props.navigation.navigate('TabThreeScreenThree') }
-          style={{
-            padding:20,
-            borderRadius:20,
-            backgroundColor:'yellow',
-            marginTop:20
-          }}>
-          <Text>{'Go to screen three'}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          onPress={ () => this.props.navigation.goBack() }
-          style={{
-            padding:20,
-            borderRadius:20,
-            backgroundColor:'deeppink',
-            marginTop:20
-          }}>
-          <Text>{'Go back a screen this tab'}</Text>
-        </TouchableOpacity>
-
       </View>
     )
   }

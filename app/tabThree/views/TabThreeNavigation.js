@@ -1,13 +1,11 @@
-'use strict'
-// React
 import React from 'react'
-// Navigation
-import { addNavigationHelpers } from 'react-navigation'
-import { NavigatorTabThree } from '../navigationConfiguration'
-//Redux
 import { connect } from 'react-redux'
-// Icon
+
+import { addNavigationHelpers } from 'react-navigation'
+
 import Icon from 'react-native-vector-icons/FontAwesome'
+
+import { NavigatorTabThree } from '../navigationConfiguration'
 
 const mapStateToProps = (state) => {
  return {
