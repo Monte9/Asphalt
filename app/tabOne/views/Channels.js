@@ -237,7 +237,7 @@ export default class Channels extends Component {
       const { coverUrl, members, lastMessage, unreadMessageCount, memberCount } = channel
 
       return (
-        <View key={channel.id}>
+        <View key={index}>
           <TouchableOpacity
             style={{paddingBottom: 10, paddingTop: 10, marginRight: 10}}
             onPress={() => this._onChannelPress(channel)} >
@@ -273,7 +273,7 @@ export default class Channels extends Component {
       const { coverUrl, name, participantCount } = channel
 
       return (
-        <View key={channel.id}>
+        <View key={index}>
           <TouchableOpacity
             style={{paddingBottom: 10, paddingTop: 10, marginRight: 10}}
             onPress={() => this._onOpenChannelPress(channel)} >
@@ -316,7 +316,7 @@ export default class Channels extends Component {
     return (
       <View style={styles.container}>
         <ScrollView>
-          {this.sectionHeader("Activity Chat")}
+          {this.sectionHeader("Direct Message")}
           {this.renderGroupChannels()}
           {this.sectionHeader("Pillow Chat")}
           {this.renderOpenChannels()}

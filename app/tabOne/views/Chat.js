@@ -377,8 +377,8 @@ export default class Chat extends Component {
                           <CacheableImage style={styles.senderIcon} key={rowData.sender.profileUrl} source={{uri: rowData.sender.profileUrl.replace('http://', 'https://')}} />
                         </View>
                         <View style={styles.senderContainer}>
-                          <Text style={[styles.senderText, {color: '#3e3e55'}]}>{rowData.sender.nickname}</Text>
-                          <Text style={[styles.senderText, {color: '#343434', fontWeight: 'bold'}]}>{rowData.message}</Text>
+                          <Text style={[styles.senderText]}>{rowData.sender.nickname}</Text>
+                          <Text style={[styles.senderText, { color: 'black', fontWeight: '500', paddingTop: 5, }]}>{rowData.message}</Text>
                         </View>
                       </View>
                     </TouchableHighlight>
@@ -387,8 +387,10 @@ export default class Chat extends Component {
                   return (
                     <TouchableHighlight underlayColor='#f7f8fc' onPress={() => this._onUserPress(rowData.sender)}>
                       <View style={[styles.listItem, {transform: [{ scaleY: -1 }]}]}>
-                        <View style={styles.listIcon}>
-                          <CacheableImage style={styles.senderIcon} key={rowData.sender.profileUrl} source={{uri: rowData.sender.profileUrl.replace('http://', 'https://')}} />
+                        <View style={styles.iconContainer}>
+                          <View style={styles.listIcon}>
+                            <CacheableImage style={styles.senderIcon} key={rowData.sender.profileUrl} source={{uri: rowData.sender.profileUrl.replace('http://', 'https://')}} />
+                          </View>
                         </View>
                         <View style={styles.senderContainer}>
                           <Text style={[styles.senderText, {color: '#3e3e55'}]}>{rowData.sender.nickname}</Text>
@@ -479,7 +481,6 @@ const styles = StyleSheet.create({
   listItem: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-start',
     backgroundColor: '#f7f8fc',
     padding: 5,
   },
@@ -492,23 +493,34 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 5,
   },
-
-  listIcon: {
-    justifyContent: 'flex-start',
-    paddingLeft: 10,
-    paddingRight: 15
-  },
-  senderIcon: {
-    width: 30,
-    height: 30
-  },
-  senderContainer: {
+  iconContainer: {
     flex: 1,
     flexDirection: 'column',
   },
+  listIcon: {
+    flex: 1,
+    paddingHorizontal: 10,
+  },
+  senderIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 10,
+  },
+  senderContainer: {
+    flex: 7,
+    flexDirection: 'column',
+    backgroundColor: '#eee',
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 20,
+    borderColor: '#666',
+    marginRight: 10,
+  },
   senderText: {
-    fontSize: 12,
-    color: '#ababab'
+    fontSize: 13,
+    marginLeft: 10,
+    color: '#e22d7a'
   },
   dateText: {
     textAlign: 'center',

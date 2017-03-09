@@ -27,7 +27,7 @@ export default class TabOneScreenOne extends Component {
     super(props);
     this.state = {
       userId: 'monte9',
-      username: 'monte9',
+      username: 'monte',
       connectLabel: 'CONNECT',
       buttonDisabled: true,
       errorMessage: ''
