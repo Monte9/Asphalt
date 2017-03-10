@@ -5,7 +5,7 @@ import TabThreeScreenTwo from './views/TabThreeScreenTwo'
 
 const routeConfiguration = {
   TabThreeScreenOne: { screen: TabThreeScreenOne },
-  TabThreeScreenTwo: { screen: TabThreeScreenTwo },
+  TabThreeScreenTwo: { screen: TabThreeScreenTwo, path: 'profile/:history' },
 }
 
 const stackNavigatorConfiguration = {

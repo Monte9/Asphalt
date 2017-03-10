@@ -13,21 +13,13 @@ import {
 import { addNavigationHelpers } from 'react-navigation'
 import { NavigatorTabOne } from '../navigationConfiguration'
 
-import { connect } from 'react-redux'
-
 import Icon from 'react-native-vector-icons/FontAwesome'
 import SendBird from 'sendbird'
 
 import {APP_ID} from '../../consts'
 var sb = null;
 
-const mapStateToProps = (state) => {
- return {
-  navigationState: state.tabOne
-  }
-}
-
-class TabOneNavigation extends React.Component {
+export default class TabOneNavigation extends React.Component {
   static navigationOptions = {
     tabBar:{
       label: 'Message',
@@ -91,17 +83,8 @@ class TabOneNavigation extends React.Component {
   }
 
   render(){
-    const { navigationState, dispatch } = this.props
     return (
-      <NavigatorTabOne
-        navigation={
-          addNavigationHelpers({
-            dispatch: dispatch,
-            state: navigationState
-          })
-        }
-      />
+      <NavigatorTabOne />
     )
   }
 }
-export default connect(mapStateToProps)(TabOneNavigation)

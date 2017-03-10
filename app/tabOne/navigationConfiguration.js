@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 import TabOneScreenOne from './views/TabOneScreenOne'
@@ -8,12 +9,15 @@ import Channels from './views/Channels'
 const routeConfiguration = {
   TabOneScreenOne: { screen: TabOneScreenOne },
   TabOneScreenTwo: { screen: TabOneScreenTwo },
-  Chat: { screen: Chat },
+  Chat: { screen: Chat, path: 'chat/:user' },
   Channels: { screen: Channels }
 }
 
 const stackNavigatorConfiguration = {
-  initialRoute: 'TabOneScreenOne'
+  containerOptions: {
+    // on Android, the URI prefix typically contains a host in addition to scheme
+    URIPrefix: Platform.OS == 'android' ? 'pillowpro://pillowpro/' : 'pillowpro://',
+  },
 }
 
-export const NavigatorTabOne = StackNavigator(routeConfiguration,stackNavigatorConfiguration)
+export const NavigatorTabOne = StackNavigator(routeConfiguration, stackNavigatorConfiguration)

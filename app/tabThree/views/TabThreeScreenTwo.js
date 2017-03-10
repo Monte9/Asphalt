@@ -5,7 +5,7 @@ import BackButton from '../../shared/back_button'
 
 export default class TabThreeScreenTwo extends React.Component {
   static navigationOptions = {
-    title: ({ state }) => state.params.title,
+    title: ({ state }) => state.params.path,
     header: ({ goBack }) => {
       return {
         left: <BackButton goBack={goBack} />
